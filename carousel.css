@@ -1,0 +1,159 @@
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 50%;
+  margin: auto;
+  height:90%;
+  position:relative;
+}
+
+
+.carousel-wrapper * {
+  box-sizing: border-box;
+}
+
+
+.carousel {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+
+.carousel_card {
+    text-align:center;
+  opacity: 0;
+  position: absolute;
+  top:0;
+  width: 100%;
+  margin: auto;
+  padding: 1rem 4rem;
+  z-index: 100;
+  transition: transform .5s, opacity .5s, z-index .5s;
+}
+.carousel__photo
+{
+    width:100%;
+    height:90%;
+}
+
+.carousel_card.initial,
+.carousel_card.active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+
+.carousel_card.prev,
+.carousel_card.next {
+  z-index: 800;
+}
+
+.carousel_card.prev {
+  transform: translateX(-100%);
+}
+
+
+.carousel_card.next {
+  transform: translateX(100%);
+}
+
+
+.carousel__button--prev,
+.carousel__button--next {
+  position: absolute;
+  top:50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #FFF;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer; 
+  z-index: 1001; 
+  border:1px solid black;
+
+}
+
+.carousel__button--prev {
+  left:0;
+}
+
+.carousel__button--next {
+  right:0;
+}
+
+
+.carousel__button--prev::after,
+.carousel__button--next::after {
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 54%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.carousel__button--next::after {
+  left: 47%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    /* top: 0%; */
+    /* left: 0%; */
+    /* transform: translate(-50%, -50%); */
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    width: 95%;
+    height: 90%;
+}
+.modal-img
+{
+    width:90%;
+    height:90%;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    z-index:100000;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.link
+{
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+}
